@@ -24,5 +24,20 @@ namespace MultimediaLibrary
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddArtistPage();
+        }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddTrackPage();
+        }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new DisplayPage();
+        }
     }
 }
