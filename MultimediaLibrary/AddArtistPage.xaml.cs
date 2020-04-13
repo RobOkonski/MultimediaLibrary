@@ -22,5 +22,21 @@ namespace MultimediaLibrary
         {
             InitializeComponent();
         }
+
+        private void saveArtist_Click(object sender, RoutedEventArgs e)
+        {
+            if (artistNameBox.Text.Length !=0)
+            {
+                using (var db = new AppDbContext())
+                {
+                    Artist artist = new Artist() { Name = artistNameBox.Text };
+                    db.Artists.Add(artist);
+                    db.SaveChanges();
+                }
+                artistStatusLabel.Content = "Saved";
+            }
+            else artistStatusLabel.Content = "Artist name box empty"; 
+        }
+
     }
 }
