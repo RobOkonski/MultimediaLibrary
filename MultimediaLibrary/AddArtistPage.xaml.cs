@@ -13,6 +13,9 @@ using System.Windows.Shapes;
 
 namespace MultimediaLibrary
 {
+    using Models;
+    using Interfaces;
+    using Repositories;
     /// <summary>
     /// Interaction logic for AddArtistPage.xaml
     /// </summary>
@@ -27,12 +30,10 @@ namespace MultimediaLibrary
         {
             if (artistNameBox.Text.Length !=0)
             {
-                using (var db = new AppDbContext())
-                {
-                    Artist artist = new Artist() { Name = artistNameBox.Text };
-                    db.Artists.Add(artist);
-                    db.SaveChanges();
-                }
+                var context = new AppDbContext();
+                Artist artist = new Artist() { Name = artistNameBox.Text };
+                IArtistRepository repo = new ArtistRepository();
+                repo.CreateArtist(artist);
                 artistStatusLabel.Content = "Saved";
             }
             else artistStatusLabel.Content = "Artist name box empty"; 

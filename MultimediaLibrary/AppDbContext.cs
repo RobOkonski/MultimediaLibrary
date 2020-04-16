@@ -2,6 +2,7 @@
 
 namespace MultimediaLibrary
 {
+    using Models;
     class AppDbContext : DbContext
     {
         public DbSet<Artist> Artists { set; get; }

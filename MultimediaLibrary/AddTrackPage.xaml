@@ -9,6 +9,31 @@
       Title="AddTrackPage">
 
     <Grid>
-        <TextBlock Text="Add Track" FontSize="32" FontWeight="DemiBold" HorizontalAlignment="Left"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock  Text="Artist name: " FontSize="28" Foreground="#FF152B2B" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Column="1" x:Name="artistSelect" Height="30" Width="400" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" BorderBrush="#FF152B2B"/>
+
+        <TextBlock Grid.Row="1" Text="Track name: " FontSize="28" Foreground="#FF152B2B" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="trackNameBox" Height="30" Width="400" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" />
+
+        <TextBlock Grid.Row="2" Text="Youtube path: " FontSize="28" Foreground="#FF152B2B" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="youtubeTrackPathBox" Height="30" Width="400" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" />
+        <Button Grid.Row="2" Grid.Column="2" x:Name="addTrackYoutubePath" Content="Add" Margin="10" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" />
+
+        <Label Grid.Row="3" Grid.Column="1" x:Name="trackStatusLabel" FontSize="28" HorizontalAlignment="Right" Foreground="#FF152B2B"/>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="saveTrack" Content="Save" Margin="10" FontSize="16" Background="#FF152B2B" Foreground="#FF606793"/>
     </Grid>
 </Page>

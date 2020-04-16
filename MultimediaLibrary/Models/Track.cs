@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MultimediaLibrary
+namespace MultimediaLibrary.Models
 {
     public class Track
     {
