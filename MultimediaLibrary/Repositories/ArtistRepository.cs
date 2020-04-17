@@ -9,9 +9,8 @@
     {
         private readonly AppDbContext context;
 
-        public ArtistRepository(/*AppDbContext _context*/)
+        public ArtistRepository()
         {
-            //context = _context;
             context = new AppDbContext();
         }
 
@@ -25,6 +24,26 @@
         {
             var artist = context.Artists.Find(id);
             return artist;
+        }
+
+        public Artist GetArtist(string name)
+        {
+            var artist = context.Artists.Where(x => x.Name == name).First();
+            return artist;
+        }
+
+        public string[] GetArtistNames()
+        {
+            var artists = GetArtists();
+            int quantity = artists.Count();
+            string[] names = new string[quantity];
+
+
+            for (int i = 0; i < quantity; i++)
+            {
+                names[i] = artists[i].Name;
+            }
+            return names;
         }
 
         public int CreateArtist(Artist artist)

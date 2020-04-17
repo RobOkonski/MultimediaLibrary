@@ -5,6 +5,8 @@
     {
         Artist[] GetArtists();
         Artist GetArtist(int id);
+        Artist GetArtist(string name);
+        string[] GetArtistNames();
         int CreateArtist(Artist artist);
         void UpdateArtist(int id, Artist artist);
         void DeleteArtist(int id);

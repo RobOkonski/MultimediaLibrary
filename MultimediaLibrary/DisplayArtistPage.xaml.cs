@@ -13,14 +13,24 @@ using System.Windows.Shapes;
 
 namespace MultimediaLibrary
 {
+    using Interfaces;
+    using Repositories;
+    using Models;
     /// <summary>
     /// Interaction logic for DisplayPage.xaml
     /// </summary>
-    public partial class DisplayPage : Page
+    public partial class DisplayArtistPage : Page
     {
-        public DisplayPage()
+        public DisplayArtistPage()
         {
             InitializeComponent();
+            IArtistRepository repo = new ArtistRepository();
+            displayArtist.ItemsSource = repo.GetArtists();
+        }
+
+        private void OpenButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Click");
         }
     }
 }

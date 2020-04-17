@@ -37,7 +37,7 @@ namespace MultimediaLibrary
 
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new DisplayPage();
+            Main.Content = new DisplayArtistPage();
         }
     }
 }

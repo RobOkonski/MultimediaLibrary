@@ -30,7 +30,6 @@ namespace MultimediaLibrary
         {
             if (artistNameBox.Text.Length !=0)
             {
-                var context = new AppDbContext();
                 Artist artist = new Artist() { Name = artistNameBox.Text };
                 IArtistRepository repo = new ArtistRepository();
                 repo.CreateArtist(artist);
