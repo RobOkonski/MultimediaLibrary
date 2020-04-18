@@ -31,6 +31,7 @@ namespace MultimediaLibrary
             if (artistNameBox.Text.Length !=0)
             {
                 Artist artist = new Artist() { Name = artistNameBox.Text };
+                if (youtubeAccountPathBox.Text.Length != 0) artist.YoutubeAccountPath = youtubeAccountPathBox.Text;
                 IArtistRepository repo = new ArtistRepository();
                 repo.CreateArtist(artist);
                 artistStatusLabel.Content = "Saved";

@@ -39,5 +39,6 @@ namespace MultimediaLibrary
         {
             Main.Content = new DisplayArtistPage();
         }
+
     }
 }

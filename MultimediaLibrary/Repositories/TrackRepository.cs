@@ -20,6 +20,12 @@
             return tracks;
         }
 
+        public Track[] GetTracksThatContains(int artistId)
+        {
+            var tracks = context.Tracks.Where(x => x.ArtistId == artistId).ToArray();
+            return tracks;
+        }
+
         public Track GetTrack(int id)
         {
             var track = context.Tracks.Find(id);
@@ -30,7 +36,7 @@
         {
             context.Tracks.Add(track);
             context.SaveChanges();
-            return track.Id;
+            return track.TrackId;
         }
 
         public void UpdateTrack(int id, Track track)
@@ -49,7 +55,7 @@
 
         public bool TrackExist(int id)
         {
-            var exist = context.Tracks.Any(x => x.Id == id);
+            var exist = context.Tracks.Any(x => x.TrackId == id);
             return exist;
         }
     }

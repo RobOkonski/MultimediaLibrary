@@ -30,7 +30,15 @@ namespace MultimediaLibrary
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Click");
+            Artist artist = displayArtist.SelectedItem as Artist;
+            if (artist.YoutubeAccountPath == null) MessageBox.Show("Click");
+            else MessageBox.Show(artist.YoutubeAccountPath);
+        }
+
+        private void DisplayButton_Click(object sender, RoutedEventArgs e)
+        {
+            Artist artist = displayArtist.SelectedItem as Artist;
+            this.NavigationService.Navigate(new DisplayTrackPage(artist.ArtistId));
         }
     }
 }

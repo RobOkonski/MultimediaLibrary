@@ -6,7 +6,7 @@ namespace MultimediaLibrary.Models
 {
     public class Artist
     {
-        public int Id { set; get; }
+        public int ArtistId { set; get; }
         public string Name { set; get; }
         public string YoutubeAccountPath { set; get; } = null;
         public virtual ICollection<Track> Tracks { set; get; }

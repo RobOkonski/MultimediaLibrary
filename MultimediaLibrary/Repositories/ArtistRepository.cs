@@ -50,7 +50,7 @@
         {
             context.Artists.Add(artist);
             context.SaveChanges();
-            return artist.Id;
+            return artist.ArtistId;
         }
 
         public void UpdateArtist(int id, Artist artist)
@@ -69,7 +69,7 @@
 
         public bool ArtistExist(int id)
         {
-            var exist = context.Artists.Any(x => x.Id == id);
+            var exist = context.Artists.Any(x => x.ArtistId == id);
             return exist;
         }
     }

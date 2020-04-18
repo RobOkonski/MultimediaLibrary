@@ -4,6 +4,7 @@
     public interface ITrackRepository 
     {
         Track[] GetTracks();
+        Track[] GetTracksThatContains(int artistId);
         Track GetTrack(int id);
         int CreateTrack(Track track);
         void UpdateTrack(int id, Track track);

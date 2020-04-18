@@ -6,7 +6,7 @@ namespace MultimediaLibrary.Models
 {
     public class Track
     {
-        public int Id { set; get; }
+        public int TrackId { set; get; }
         public string Name { set; get; }
         public int ArtistId { set; get; } 
         public virtual Artist Artist { set; get; }
