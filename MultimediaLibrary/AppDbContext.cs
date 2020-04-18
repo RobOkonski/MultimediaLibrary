@@ -10,7 +10,7 @@ namespace MultimediaLibrary
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-0QE7KCN;Initial Catalog=MultimediaLibrary;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MultimediaLibrary;Trusted_Connection=True;");
             base.OnConfiguring(optionsBuilder);
         }
     }
