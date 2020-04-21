@@ -1,26 +1,24 @@
-using System;
-using Xunit;
-
-
 namespace UnitTests
 {
+    using System;
+    using Xunit;
     using MultimediaLibrary;
     using Microsoft.EntityFrameworkCore;
     using MultimediaLibrary.Interfaces;
     using MultimediaLibrary.Repositories;
     using MultimediaLibrary.Models;
+
     public class ArtistRepositoryTests
     {
         [Fact]
         public void ShouldReturnAllArtists()
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
             Seed(context);
 
             var result = query.GetArtists();
 
             Assert.Equal(3,result.Length);
-
         }
 
         [Theory]
@@ -29,7 +27,7 @@ namespace UnitTests
         [InlineData(3)]
         public void ShouldReturnProperArtistById(int id)
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
             Seed(context);
 
             var result = query.GetArtist(id);
@@ -43,7 +41,7 @@ namespace UnitTests
         [InlineData("cccc")]
         public void ShouldReturnProperArtistByName(string name)
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
             Seed(context);
 
             var result = query.GetArtist(name);
@@ -54,7 +52,7 @@ namespace UnitTests
         [Fact]
         public void ShouldGetAllArtistsNames()
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
             Seed(context);
 
             var result = query.GetArtistNames();
@@ -68,7 +66,7 @@ namespace UnitTests
         [Fact]
         public void ShouldCreateArtist()
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
 
             var result = query.CreateArtist(new Artist {Name = "dddd", YoutubeAccountPath = "xyz.com" });
             Assert.Equal(1, result);
@@ -82,7 +80,7 @@ namespace UnitTests
         [InlineData(3)]
         public void ShouldUpdateArtist(int id)
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
             Seed(context);
 
             query.UpdateArtist(id, new Artist { Name = "dddd", YoutubeAccountPath="xyz.com"});
@@ -95,7 +93,7 @@ namespace UnitTests
         [Fact]
         public void ShouldDeleteArtist()
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
             Seed(context);
 
             Assert.Equal(3, query.GetArtists().Length);
@@ -112,7 +110,7 @@ namespace UnitTests
         [InlineData(4)]
         public void ShouldCheckIfExist(int id)
         {
-            var (context, query) = Initialise(Guid.NewGuid().ToString());
+            var (context, query) = Initialize(Guid.NewGuid().ToString());
             Seed(context);
 
             var result = query.ArtistExist(id);
@@ -133,7 +131,7 @@ namespace UnitTests
             context.SaveChanges();
         }
 
-        private (AppDbContext, IArtistRepository) Initialise(string DbName)
+        private (AppDbContext, IArtistRepository) Initialize(string DbName)
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase(databaseName: DbName)

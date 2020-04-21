@@ -18,6 +18,11 @@
             context = new AppDbContext(options);
         }
 
+        public TrackRepository(AppDbContext _context)
+        {
+            context = _context; 
+        }
+
         public Track[] GetTracks()
         {
             var tracks = context.Tracks.ToArray();
@@ -46,6 +51,8 @@
         public void UpdateTrack(int id, Track track)
         {
             var oldtrack = context.Tracks.Find(id);
+            oldtrack.Name = track.Name;
+            oldtrack.ArtistId = track.ArtistId;
             oldtrack.YoutubePath = track.YoutubePath;
             context.SaveChanges();
         }
