@@ -1,6 +1,7 @@
 ﻿namespace MultimediaLibrary.Interfaces
 {
     using Models;
+    using System.Collections.Generic;
     public interface IArtistRepository 
     {
         Artist[] GetArtists();

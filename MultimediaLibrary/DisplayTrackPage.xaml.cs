@@ -25,9 +25,7 @@ namespace MultimediaLibrary
         {
             InitializeComponent();
             IArtistRepository artistRepo = new ArtistRepository();
-            artistNameLabel.Content = artistRepo.GetArtist(artistId).Name;
-            ITrackRepository repo = new TrackRepository();            
-            displayTracks.ItemsSource = repo.GetTracksThatContains(artistId);
+            displayTracks.ItemsSource = artistRepo.GetArtist(artistId).Tracks;
         }
 
         private void OpenTrackButton_Click(object sender, RoutedEventArgs e)

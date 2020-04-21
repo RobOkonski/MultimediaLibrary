@@ -36,7 +36,7 @@ namespace MultimediaLibrary
             if (trackNameBox.Text.Length != 0 && artistSelect.SelectedItem != null)
             {
                 IArtistRepository artistRepo = new ArtistRepository();
-                Track track = new Track() { Name = trackNameBox.Text, ArtistId = artistRepo.GetArtist(artistSelect.Text).ArtistId};
+                Track track = new Track() { Name = trackNameBox.Text, ArtistId=artistRepo.GetArtist(artistSelect.Text).ArtistId};
                 if (youtubeTrackPathBox.Text.Length != 0) track.YoutubePath = youtubeTrackPathBox.Text;
                 ITrackRepository repo = new TrackRepository();
                 repo.CreateTrack(track);

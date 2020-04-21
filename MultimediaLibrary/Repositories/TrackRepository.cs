@@ -11,7 +11,11 @@
 
         public TrackRepository()
         {
-            context = new AppDbContext();
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+               .UseLazyLoadingProxies()
+               .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MultimediaLibrary;Trusted_Connection=True;")
+               .Options;
+            context = new AppDbContext(options);
         }
 
         public Track[] GetTracks()

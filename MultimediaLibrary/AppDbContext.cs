@@ -1,17 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Proxies;
 
 namespace MultimediaLibrary
 {
     using Models;
-    class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Artist> Artists { set; get; }
         public DbSet<Track> Tracks { set; get; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MultimediaLibrary;Trusted_Connection=True;");
-            base.OnConfiguring(optionsBuilder);
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     }
 }

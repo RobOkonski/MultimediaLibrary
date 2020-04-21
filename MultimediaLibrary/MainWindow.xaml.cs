@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace MultimediaLibrary
 {
+    using Models;
+    using Interfaces;
+    using Repositories;
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>

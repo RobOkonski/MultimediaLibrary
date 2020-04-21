@@ -1,9 +1,12 @@
 ﻿namespace MultimediaLibrary.Repositories
 {
-    using Microsoft.EntityFrameworkCore;
+    using System;
     using Models;
     using Interfaces;
     using System.Linq;
+    using System.Collections.Generic;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.SqlServer;
 
     public class ArtistRepository : IArtistRepository
     {
@@ -11,7 +14,16 @@
 
         public ArtistRepository()
         {
-            context = new AppDbContext();
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseLazyLoadingProxies()
+                .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MultimediaLibrary;Trusted_Connection=True;")
+                .Options;
+            context = new AppDbContext(options);
+        }
+
+        public ArtistRepository(AppDbContext _context)
+        {
+            context = _context;
         }
 
         public Artist[] GetArtists()
@@ -56,6 +68,7 @@
         public void UpdateArtist(int id, Artist artist)
         {
             var oldArtist = context.Artists.Find(id);
+            oldArtist.Name = artist.Name;
             oldArtist.YoutubeAccountPath = artist.YoutubeAccountPath;
             context.SaveChanges();
         }
