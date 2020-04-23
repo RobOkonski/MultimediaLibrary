@@ -16,16 +16,31 @@ namespace MultimediaLibrary
     using Models;
     using Interfaces;
     using Repositories;
+
     /// <summary>
     /// Interaction logic for AddArtistPage.xaml
     /// </summary>
     public partial class AddArtistPage : Page
     {
+        /// <summary>
+        /// Constructor of AddArtistPage
+        /// </summary>
+        /// <remarks>
+        /// Open artist form
+        /// </remarks>
         public AddArtistPage()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// saveArtist button action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Save inscribed data as a new Artist in database
+        /// </remarks>
         private void saveArtist_Click(object sender, RoutedEventArgs e)
         {
             if (artistNameBox.Text.Length !=0)

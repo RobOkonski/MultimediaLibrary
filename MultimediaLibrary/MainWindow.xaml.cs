@@ -23,21 +23,48 @@ namespace MultimediaLibrary
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Constructor that initialise MainWindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Button1 action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open new AddArtistPage
+        /// </remarks>
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new AddArtistPage();
         }
 
+        /// <summary>
+        /// Button2 action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open new AddTrackPage
+        /// </remarks>
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new AddTrackPage();
         }
 
+        /// <summary>
+        /// Button3 action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open new DisplayArtistPage
+        /// </remarks>
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new DisplayArtistPage();

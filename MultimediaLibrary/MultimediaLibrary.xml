@@ -1,0 +1,569 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MultimediaLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:MultimediaLibrary.AddArtistPage">
+            <summary>
+            Interaction logic for AddArtistPage.xaml
+            </summary>
+            <summary>
+            AddArtistPage
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.AddArtistPage.#ctor">
+            <summary>
+            Constructor of AddArtistPage
+            </summary>
+            <remarks>
+            Open artist form
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.AddArtistPage.saveArtist_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            saveArtist button action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Save inscribed data as a new Artist in database
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.AddArtistPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.AddTrackPage">
+            <summary>
+            Interaction logic for AddTrackPage.xaml
+            </summary>
+            <summary>
+            AddTrackPage
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.AddTrackPage.#ctor">
+            <summary>
+            Constructor that creates AddTrackPage
+            </summary>
+            <remarks>
+            Open Track form
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.AddTrackPage.saveTrack_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            saveTrack button action 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Save inscribed data as a new Track in database
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.AddTrackPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.AppDbContext">
+            <summary>
+            Provides database service
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.AppDbContext.Artists">
+            <summary>
+            Create table of artists
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.AppDbContext.Tracks">
+            <summary>
+            Create table of tracks
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.AppDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MultimediaLibrary.AppDbContext})">
+            <summary>
+            Constructor of database 
+            </summary>
+            <param name="options"> Database options, requires DbContextOptions of AppDbContext object </param>
+        </member>
+        <member name="T:MultimediaLibrary.DisplayArtistPage">
+            <summary>
+            Interaction logic for DisplayPage.xaml
+            </summary>
+            <summary>
+            DisplayArtistPage
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayArtistPage.#ctor">
+            <summary>
+            Constructor that create DisplayArtistPage
+            </summary>
+            <remarks>
+            Display all artists from database
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayArtistPage.OpenButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            OpneButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open artist account on youtube if the path exist
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayArtistPage.DisplayButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            DisplayButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open DisplayTrackPage wtih all track of this artist
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayArtistPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.DisplayTrackPage">
+            <summary>
+            Interaction logic for DisplayTrackPage.xaml
+            </summary>
+            <summary>
+            DisplayTrackPage
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayTrackPage.#ctor(System.Int32)">
+            <summary>
+            Constructor that create new DisplayTrackPage
+            </summary>
+            <param name="artistId"> Id of artist whose track would be displayed </param>
+            <remarks>
+            Display tracks of indicated artist
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayTrackPage.OpenTrackButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            OpenTrackButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open this track on youtube if the path exist
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayTrackPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.Interfaces.IArtistRepository">
+            <summary>
+            Give interface for Artist table 
+            </summary>
+            <remarks>
+            Access to the database Artist table is only allowed by using this methods
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.GetArtists">
+            <summary>
+            Get all Artists that consist in the database
+            </summary>
+            <returns> Method returns an array od Artists </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.GetArtist(System.Int32)">
+            <summary>
+            Get Artist by its id
+            </summary>
+            <param name="id"> InId of wanted artist, require integer argument </param>
+            <returns> Returns Artist object </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.GetArtist(System.String)">
+            <summary>
+            Get Artist by its name
+            </summary>
+            <param name="name"> Name of wanted artist, require string argument </param>
+            <returns> Returns Artist object </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.GetArtistNames">
+            <summary>
+            Get all Artists names that consist in the database
+            </summary>
+            <returns> Returns an array of string with artists names in </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.CreateArtist(MultimediaLibrary.Models.Artist)">
+            <summary>
+            Create new Artist entity in database
+            </summary>
+            <param name="artist"> Artist object that we want create in database, requires Artist object </param>
+            <returns> Returns id of created artist </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.UpdateArtist(System.Int32,MultimediaLibrary.Models.Artist)">
+            <summary>
+            Update existing Artist entity
+            </summary>
+            <param name="id"> Id of an artist that we want to update, requires integer argument </param>
+            <param name="artist"> New Artist object that consist of new data of existing artist, requires Artist object </param>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.DeleteArtist(System.Int32)">
+            <summary>
+            Delete existing artist
+            </summary>
+            <param name="id"> Id of an artist that we want to delete, requires integer argument </param>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.IArtistRepository.ArtistExist(System.Int32)">
+            <summary>
+            Check if artist exist
+            </summary>
+            <param name="id"> Id of an artist that we want to check, requires integer argument </param>
+            <returns> Returns true if artist exist, or false if doesn'n exist </returns>
+        </member>
+        <member name="T:MultimediaLibrary.Interfaces.ITrackRepository">
+            <summary>
+            Give interface for Track table 
+            </summary>
+            <remarks>
+            Access to the database Track table is only allowed by using this methods
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.ITrackRepository.GetTracks">
+            <summary>
+            Get all Tracks from database
+            </summary>
+            <returns> Returns an array of tracks </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.ITrackRepository.GetTracksThatContains(System.Int32)">
+            <summary>
+            Get a Tracks that belongs to indicated artist
+            </summary>
+            <param name="artistId"> Id of an artist whose track we want, requires integer argument </param>
+            <returns> Returns an array of Tracks </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.ITrackRepository.GetTrack(System.Int32)">
+            <summary>
+            Get a Track by its id
+            </summary>
+            <param name="id"> Id of wanted Track, requires integer argument </param>
+            <returns> Returns Track object </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.ITrackRepository.CreateTrack(MultimediaLibrary.Models.Track)">
+            <summary>
+            Create new Track entity in database
+            </summary>
+            <param name="track"> Track object that we wat to create, requires Track object </param>
+            <returns> Returns id of created track </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.ITrackRepository.UpdateTrack(System.Int32,MultimediaLibrary.Models.Track)">
+            <summary>
+            Update an existing track
+            </summary>
+            <param name="id"> Id of a track that we want to update, requires integer argument </param>
+            <param name="track"> New track object that consist of new track data, requires Track object </param>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.ITrackRepository.DeleteTrack(System.Int32)">
+            <summary>
+            Delete existing track
+            </summary>
+            <param name="id"> Id of a track that we want to delete, requires integer argument </param>
+        </member>
+        <member name="M:MultimediaLibrary.Interfaces.ITrackRepository.TrackExist(System.Int32)">
+            <summary>
+            Check if track exist
+            </summary>
+            <param name="id"> Id of a track that we want to check, requires integer argument </param>
+            <returns> Returns true if track exist, or false if not </returns>
+        </member>
+        <member name="T:MultimediaLibrary.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.MainWindow.#ctor">
+            <summary>
+            Constructor that initialise MainWindow
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.MainWindow.Button1_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Button1 action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open new AddArtistPage
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.MainWindow.Button2_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Button2 action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open new AddTrackPage
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.MainWindow.Button3_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Button3 action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open new DisplayArtistPage
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.Migrations.InitialCreate">
+            <summary>
+            Migration class
+            </summary>
+            <summary>
+            Initial create class
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <summary>
+            Up method
+            </summary>
+            <param name="migrationBuilder"></param>
+        </member>
+        <member name="M:MultimediaLibrary.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <summary>
+            Down method
+            </summary>
+            <param name="migrationBuilder"></param>
+        </member>
+        <member name="M:MultimediaLibrary.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            BuildTargetModel method
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="T:MultimediaLibrary.Models.Artist">
+            <summary>
+            Database model of an artist
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Artist.ArtistId">
+            <summary>
+            Store id of an artist, primary key
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Artist.Name">
+            <summary>
+            Store name of an artist
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Artist.YoutubeAccountPath">
+            <summary>
+            Store path to artists youtube account, nullable
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Artist.Tracks">
+            <summary>
+            Provde lazy loading of artists tracks
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.Models.Track">
+            <summary>
+            Database model of track
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Track.TrackId">
+            <summary>
+            Store Id of a track, primary key
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Track.Name">
+            <summary>
+            Store name of a track
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Track.ArtistId">
+            <summary>
+            Store id of an artist, foreign key
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Track.Artist">
+            <summary>
+            Store artist referance
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Track.YoutubePath">
+            <summary>
+            Store YouTube path to this track, nullable
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.Repositories.ArtistRepository">
+            <summary>
+            Implementation of methods from IArtistRepository
+            </summary>
+        </member>
+        <member name="F:MultimediaLibrary.Repositories.ArtistRepository.context">
+            <summary>
+            Store database context
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.#ctor">
+            <summary>
+            Constructor that creates database context
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.#ctor(MultimediaLibrary.AppDbContext)">
+            <summary>
+            Constructor that assigns existing database context
+            </summary>
+            <param name="_context"> Database context, requires AppDbContext object </param>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.GetArtists">
+            <summary>
+            Get all Artists that consist in the database
+            </summary>
+            <returns> Method returns an array od Artists </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.GetArtist(System.Int32)">
+            <summary>
+            Get Artist by its id
+            </summary>
+            <param name="id"> InId of wanted artist, require integer argument </param>
+            <returns> Returns Artist object </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.GetArtist(System.String)">
+            <summary>
+            Get Artist by its name
+            </summary>
+            <param name="name"> Name of wanted artist, require string argument </param>
+            <returns> Returns Artist object </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.GetArtistNames">
+            <summary>
+            Get all Artists names that consist in the database
+            </summary>
+            <returns> Returns an array of string with artists names in </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.CreateArtist(MultimediaLibrary.Models.Artist)">
+            <summary>
+            Create new Artist entity in database
+            </summary>
+            <param name="artist"> Artist object that we want create in database, requires Artist object </param>
+            <returns> Returns id of created artist </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.UpdateArtist(System.Int32,MultimediaLibrary.Models.Artist)">
+            <summary>
+            Update existing Artist entity
+            </summary>
+            <param name="id"> Id of an artist that we want to update, requires integer argument </param>
+            <param name="artist"> New Artist object that consist of new data of existing artist, requires Artist object </param>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.DeleteArtist(System.Int32)">
+            <summary>
+            Delete existing artist
+            </summary>
+            <param name="id"> Id of an artist that we want to delete, requires integer argument </param>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.ArtistRepository.ArtistExist(System.Int32)">
+            <summary>
+            Check if artist exist
+            </summary>
+            <param name="id"> Id of an artist that we want to check, requires integer argument </param>
+            <returns> Returns true if artist exist, or false if doesn'n exist </returns>
+        </member>
+        <member name="T:MultimediaLibrary.Repositories.TrackRepository">
+            <summary>
+            Implenetations of methods from ITrackRepositoty.
+            </summary>
+        </member>
+        <member name="F:MultimediaLibrary.Repositories.TrackRepository.context">
+            <summary>
+            Store database context
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.#ctor">
+            <summary>
+            Constructor that creates database context
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.#ctor(MultimediaLibrary.AppDbContext)">
+            <summary>
+            Constructor that assigns existing database context
+            </summary>
+            <param name="_context"> Database context, requires AppDbContext object </param>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.GetTracks">
+            <summary>
+            Get all Tracks from database
+            </summary>
+            <returns> Returns an array of tracks </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.GetTracksThatContains(System.Int32)">
+            <summary>
+            Get a Tracks that belongs to indicated artist
+            </summary>
+            <param name="artistId"> Id of an artist whose track we want, requires integer argument </param>
+            <returns> Returns an array of Tracks </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.GetTrack(System.Int32)">
+            <summary>
+            Get a Track by its id
+            </summary>
+            <param name="id"> Id of wanted Track, requires integer argument </param>
+            <returns> Returns Track object </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.CreateTrack(MultimediaLibrary.Models.Track)">
+            <summary>
+            Create new Track entity in database
+            </summary>
+            <param name="track"> Track object that we wat to create, requires Track object </param>
+            <returns> Returns id of created track </returns>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.UpdateTrack(System.Int32,MultimediaLibrary.Models.Track)">
+            <summary>
+            Update an existing track
+            </summary>
+            <param name="id"> Id of a track that we want to update, requires integer argument </param>
+            <param name="track"> New track object that consist of new track data, requires Track object </param>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.DeleteTrack(System.Int32)">
+            <summary>
+            Delete existing track
+            </summary>
+            <param name="id"> Id of a track that we want to delete, requires integer argument </param>
+        </member>
+        <member name="M:MultimediaLibrary.Repositories.TrackRepository.TrackExist(System.Int32)">
+            <summary>
+            Check if track exist
+            </summary>
+            <param name="id"> Id of a track that we want to check, requires integer argument </param>
+            <returns> Returns true if track exist, or false if not </returns>
+        </member>
+    </members>
+</doc>

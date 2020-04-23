@@ -16,11 +16,19 @@ namespace MultimediaLibrary
     using Interfaces;
     using Repositories;
     using Models;
+
     /// <summary>
     /// Interaction logic for DisplayTrackPage.xaml
     /// </summary>
     public partial class DisplayTrackPage : Page
     {
+        /// <summary>
+        /// Constructor that create new DisplayTrackPage
+        /// </summary>
+        /// <param name="artistId"> Id of artist whose track would be displayed </param>
+        /// <remarks>
+        /// Display tracks of indicated artist
+        /// </remarks>
         public DisplayTrackPage(int artistId)
         {
             InitializeComponent();
@@ -28,6 +36,14 @@ namespace MultimediaLibrary
             displayTracks.ItemsSource = artistRepo.GetArtist(artistId).Tracks;
         }
 
+        /// <summary>
+        /// OpenTrackButton action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open this track on youtube if the path exist
+        /// </remarks>
         private void OpenTrackButton_Click(object sender, RoutedEventArgs e)
         {
             Track track = displayTracks.SelectedItem as Track;

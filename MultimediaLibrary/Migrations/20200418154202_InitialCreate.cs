@@ -2,8 +2,15 @@
 
 namespace MultimediaLibrary.Migrations
 {
+    /// <summary>
+    /// Migration class
+    /// </summary>
     public partial class InitialCreate : Migration
     {
+        /// <summary>
+        /// Up method
+        /// </summary>
+        /// <param name="migrationBuilder"></param>
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -47,6 +54,10 @@ namespace MultimediaLibrary.Migrations
                 column: "ArtistId");
         }
 
+        /// <summary>
+        /// Down method
+        /// </summary>
+        /// <param name="migrationBuilder"></param>
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

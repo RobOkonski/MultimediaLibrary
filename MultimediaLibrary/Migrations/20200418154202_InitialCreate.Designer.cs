@@ -8,10 +8,17 @@ using MultimediaLibrary;
 
 namespace MultimediaLibrary.Migrations
 {
+    /// <summary>
+    /// Initial create class
+    /// </summary>
     [DbContext(typeof(AppDbContext))]
     [Migration("20200418154202_InitialCreate")]
     partial class InitialCreate
     {
+        /// <summary>
+        /// BuildTargetModel method
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618

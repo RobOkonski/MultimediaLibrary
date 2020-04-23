@@ -16,11 +16,18 @@ namespace MultimediaLibrary
     using Interfaces;
     using Repositories;
     using Models;
+
     /// <summary>
     /// Interaction logic for DisplayPage.xaml
     /// </summary>
     public partial class DisplayArtistPage : Page
     {
+        /// <summary>
+        /// Constructor that create DisplayArtistPage
+        /// </summary>
+        /// <remarks>
+        /// Display all artists from database
+        /// </remarks>
         public DisplayArtistPage()
         {
             InitializeComponent();
@@ -28,6 +35,14 @@ namespace MultimediaLibrary
             displayArtist.ItemsSource = repo.GetArtists();
         }
 
+        /// <summary>
+        /// OpneButton action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open artist account on youtube if the path exist
+        /// </remarks>
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             Artist artist = displayArtist.SelectedItem as Artist;
@@ -35,6 +50,14 @@ namespace MultimediaLibrary
             else MessageBox.Show(artist.YoutubeAccountPath);
         }
 
+        /// <summary>
+        /// DisplayButton action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open DisplayTrackPage wtih all track of this artist
+        /// </remarks>
         private void DisplayButton_Click(object sender, RoutedEventArgs e)
         {
             Artist artist = displayArtist.SelectedItem as Artist;

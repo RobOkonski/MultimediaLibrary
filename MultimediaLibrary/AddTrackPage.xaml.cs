@@ -17,11 +17,18 @@ namespace MultimediaLibrary
     using Interfaces;
     using Repositories;
     using Models;
+
     /// <summary>
     /// Interaction logic for AddTrackPage.xaml
     /// </summary>
     public partial class AddTrackPage : Page
     {
+        /// <summary>
+        /// Constructor that creates AddTrackPage
+        /// </summary>
+        /// <remarks>
+        /// Open Track form
+        /// </remarks>
         public AddTrackPage()
         {
             InitializeComponent();
@@ -31,6 +38,14 @@ namespace MultimediaLibrary
             artistSelect.ItemsSource = artistsNames;
         }
 
+        /// <summary>
+        /// saveTrack button action 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Save inscribed data as a new Track in database
+        /// </remarks>
         private void saveTrack_Click(object sender, RoutedEventArgs e)
         {
             if (trackNameBox.Text.Length != 0 && artistSelect.SelectedItem != null)
