@@ -105,6 +105,21 @@
             </summary>
             <param name="options"> Database options, requires DbContextOptions of AppDbContext object </param>
         </member>
+        <member name="T:MultimediaLibrary.AppDbContextFactory">
+            <summary>
+            AppDbContextFactory class
+            </summary>
+            <remarks>
+            Used with migrations
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.AppDbContextFactory.CreateDbContext(System.String[])">
+            <summary>
+            Create AppDbContext for migrations
+            </summary>
+            <param name="args"></param>
+            <returns> Returns AppDbContext object </returns>
+        </member>
         <member name="T:MultimediaLibrary.DisplayArtistPage">
             <summary>
             Interaction logic for DisplayPage.xaml
