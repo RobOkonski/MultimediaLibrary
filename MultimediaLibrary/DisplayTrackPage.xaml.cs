@@ -50,5 +50,19 @@ namespace MultimediaLibrary
             if (track.YoutubePath == null) MessageBox.Show("Not found");
             else MessageBox.Show(track.YoutubePath);
         }
+
+        /// <summary>
+        /// EditTrackButton action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open UpdateTrackPage wtih indicated track data
+        /// </remarks>
+        private void EditTrackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Track track = displayTracks.SelectedItem as Track;
+            this.NavigationService.Navigate(new UpdateTrackPage(track));
+        }
     }
 }

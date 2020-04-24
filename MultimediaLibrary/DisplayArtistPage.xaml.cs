@@ -63,5 +63,19 @@ namespace MultimediaLibrary
             Artist artist = displayArtist.SelectedItem as Artist;
             this.NavigationService.Navigate(new DisplayTrackPage(artist.ArtistId));
         }
+
+        /// <summary>
+        /// UpdateButton action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Open UpdateTrackPage with indicated artist data
+        /// </remarks>
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Artist artist = displayArtist.SelectedItem as Artist;
+            this.NavigationService.Navigate(new UpdateArtistPage(artist));
+        }
     }
 }

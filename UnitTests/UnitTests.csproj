@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Student241540\Source\Repos\RobOkonski\MultimediaLibrary\MultimediaLibrary\MultimediaLibrary.csproj" />
+    <ProjectReference Include="..\MultimediaLibrary\MultimediaLibrary.csproj" />
   </ItemGroup>
 
   
