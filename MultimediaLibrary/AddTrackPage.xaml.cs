@@ -50,14 +50,35 @@ namespace MultimediaLibrary
         {
             if (trackNameBox.Text.Length != 0 && artistSelect.SelectedItem != null)
             {
-                IArtistRepository artistRepo = new ArtistRepository();
-                Track track = new Track() { Name = trackNameBox.Text, ArtistId=artistRepo.GetArtist(artistSelect.Text).ArtistId};
-                if (youtubeTrackPathBox.Text.Length != 0) track.YoutubePath = youtubeTrackPathBox.Text;
-                ITrackRepository repo = new TrackRepository();
-                repo.CreateTrack(track);
-                trackStatusLabel.Content = "Saved";
+                if (TrackAlreadyExist(trackNameBox.Text, artistSelect.Text)) trackStatusLabel.Content = "Track already exist";
+                else
+                {
+                    IArtistRepository artistRepo = new ArtistRepository();
+                    Track track = new Track() { Name = trackNameBox.Text, ArtistId = artistRepo.GetArtist(artistSelect.Text).ArtistId };
+                    if (youtubeTrackPathBox.Text.Length != 0) track.YoutubePath = youtubeTrackPathBox.Text;
+                    ITrackRepository repo = new TrackRepository();
+                    repo.CreateTrack(track);
+                    trackStatusLabel.Content = "Saved";
+                }
             }
             else trackStatusLabel.Content = "Databox empty";
+        }
+
+        /// <summary>
+        /// Check if track of this name exist in choosen artist collection
+        /// </summary>
+        /// <param name="trackName">Name of track </param>
+        /// <param name="artistName">Name of artist</param>
+        /// <returns> Returns true if track exits in artis collection or false if doesn't </returns>
+        private bool TrackAlreadyExist(string trackName, string artistName)
+        {
+            var artistRepo = new ArtistRepository();
+            var tracks = artistRepo.GetArtist(artistName).Tracks;
+            foreach(Track t in tracks)
+            {
+                if (t.Name == trackName) return true;
+            }
+            return false;
         }
     }
 }

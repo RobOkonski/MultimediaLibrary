@@ -45,14 +45,34 @@ namespace MultimediaLibrary
         {
             if (artistNameBox.Text.Length !=0)
             {
-                Artist artist = new Artist() { Name = artistNameBox.Text };
-                if (youtubeAccountPathBox.Text.Length != 0) artist.YoutubeAccountPath = youtubeAccountPathBox.Text;
-                IArtistRepository repo = new ArtistRepository();
-                repo.CreateArtist(artist);
-                artistStatusLabel.Content = "Saved";
+                if (ArtistAlreadyExist(artistNameBox.Text)) artistStatusLabel.Content = "Artist already exists";
+                else
+                {
+                    Artist artist = new Artist() { Name = artistNameBox.Text };
+                    if (youtubeAccountPathBox.Text.Length != 0) artist.YoutubeAccountPath = youtubeAccountPathBox.Text;
+                    IArtistRepository repo = new ArtistRepository();
+                    repo.CreateArtist(artist);
+                    artistStatusLabel.Content = "Saved";
+                }
             }
             else artistStatusLabel.Content = "Artist name box empty"; 
         }
 
+        /// <summary>
+        /// Check if artist exist in database
+        /// </summary>
+        /// <param name="name"> NAme of artist, requite string argument </param>
+        /// <returns> Returns true if artist exist or false if doesn't </returns>
+        private bool ArtistAlreadyExist(string name)
+        {
+            var artistRepo = new ArtistRepository();
+            var existingNames = artistRepo.GetArtistNames();
+
+            foreach(string s in existingNames)
+            {
+                if (s == name) return true;
+            }
+            return false;
+        }
     }
 }
