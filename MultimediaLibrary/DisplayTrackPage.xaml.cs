@@ -64,5 +64,21 @@ namespace MultimediaLibrary
             Track track = displayTracks.SelectedItem as Track;
             this.NavigationService.Navigate(new UpdateTrackPage(track));
         }
+
+        /// <summary>
+        /// DeleteTrackButton action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Delete indicated track
+        /// </remarks>
+        private void DeleteTrackButton_Click(object sender, RoutedEventArgs e)
+        {
+            var trackRepo = new TrackRepository();
+            Track track = displayTracks.SelectedItem as Track;
+            trackRepo.DeleteTrack(track.TrackId);
+            this.NavigationService.Navigate(new DisplayTrackPage(track.ArtistId));
+        }
     }
 }

@@ -77,5 +77,23 @@ namespace MultimediaLibrary
             Artist artist = displayArtist.SelectedItem as Artist;
             this.NavigationService.Navigate(new UpdateArtistPage(artist));
         }
+
+        /// <summary>
+        /// DeleteButton action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// Delete Artist and all its tracks
+        /// </remarks>
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            var trackRepo = new TrackRepository();
+            var artistRepo = new ArtistRepository();
+            Artist artist = displayArtist.SelectedItem as Artist;
+            foreach (Track t in artist.Tracks) trackRepo.DeleteTrack(t.TrackId);
+            artistRepo.DeleteArtist(artist.ArtistId);
+            this.NavigationService.Navigate(new DisplayArtistPage());
+        }
     }
 }
