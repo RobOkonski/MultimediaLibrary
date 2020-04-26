@@ -30,6 +30,13 @@
             Save inscribed data as a new Artist in database
             </remarks>
         </member>
+        <member name="M:MultimediaLibrary.AddArtistPage.ArtistAlreadyExist(System.String)">
+            <summary>
+            Check if artist exist in database
+            </summary>
+            <param name="name"> NAme of artist, requite string argument </param>
+            <returns> Returns true if artist exist or false if doesn't </returns>
+        </member>
         <member name="M:MultimediaLibrary.AddArtistPage.InitializeComponent">
             <summary>
             InitializeComponent
@@ -60,6 +67,14 @@
             <remarks>
             Save inscribed data as a new Track in database
             </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.AddTrackPage.TrackAlreadyExist(System.String,System.String)">
+            <summary>
+            Check if track of this name exist in choosen artist collection
+            </summary>
+            <param name="trackName">Name of track </param>
+            <param name="artistName">Name of artist</param>
+            <returns> Returns true if track exits in artis collection or false if doesn't </returns>
         </member>
         <member name="M:MultimediaLibrary.AddTrackPage.InitializeComponent">
             <summary>
@@ -156,6 +171,26 @@
             Open DisplayTrackPage wtih all track of this artist
             </remarks>
         </member>
+        <member name="M:MultimediaLibrary.DisplayArtistPage.UpdateButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            UpdateButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open UpdateTrackPage with indicated artist data
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayArtistPage.DeleteButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            DeleteButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Delete Artist and all its tracks
+            </remarks>
+        </member>
         <member name="M:MultimediaLibrary.DisplayArtistPage.InitializeComponent">
             <summary>
             InitializeComponent
@@ -186,6 +221,26 @@
             <param name="e"></param>
             <remarks>
             Open this track on youtube if the path exist
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayTrackPage.EditTrackButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            EditTrackButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Open UpdateTrackPage wtih indicated track data
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.DisplayTrackPage.DeleteTrackButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            DeleteTrackButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Delete indicated track
             </remarks>
         </member>
         <member name="M:MultimediaLibrary.DisplayTrackPage.InitializeComponent">
@@ -356,32 +411,6 @@
             <summary>
             InitializeComponent
             </summary>
-        </member>
-        <member name="T:MultimediaLibrary.Migrations.InitialCreate">
-            <summary>
-            Migration class
-            </summary>
-            <summary>
-            Initial create class
-            </summary>
-        </member>
-        <member name="M:MultimediaLibrary.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <summary>
-            Up method
-            </summary>
-            <param name="migrationBuilder"></param>
-        </member>
-        <member name="M:MultimediaLibrary.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <summary>
-            Down method
-            </summary>
-            <param name="migrationBuilder"></param>
-        </member>
-        <member name="M:MultimediaLibrary.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <summary>
-            BuildTargetModel method
-            </summary>
-            <param name="modelBuilder"></param>
         </member>
         <member name="T:MultimediaLibrary.Models.Artist">
             <summary>
@@ -579,6 +608,80 @@
             </summary>
             <param name="id"> Id of a track that we want to check, requires integer argument </param>
             <returns> Returns true if track exist, or false if not </returns>
+        </member>
+        <member name="T:MultimediaLibrary.UpdateArtistPage">
+            <summary>
+            Interaction logic for UpdateArtistPage.xaml
+            </summary>
+            <summary>
+            UpdateArtistPage
+            </summary>
+        </member>
+        <member name="F:MultimediaLibrary.UpdateArtistPage.oldArtist">
+            <summary>
+            Store id of updated artist
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.UpdateArtistPage.#ctor(MultimediaLibrary.Models.Artist)">
+            <summary>
+            Constructor of UpdateArtistPage
+            </summary>
+            <param name="artist"> Artist that we want to edit, requires Artist object </param>
+            <remarks>
+            Fill boxes with existing data
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.UpdateArtistPage.updateArtist_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            UpdateArtistButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Update data of existing Artist
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.UpdateArtistPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MultimediaLibrary.UpdateTrackPage">
+            <summary>
+            Interaction logic for UpdateTrackPage.xaml
+            </summary>
+            <summary>
+            UpdateTrackPage
+            </summary>
+        </member>
+        <member name="F:MultimediaLibrary.UpdateTrackPage.oldTrack">
+            <summary>
+            Store edited track data
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.UpdateTrackPage.#ctor(MultimediaLibrary.Models.Track)">
+            <summary>
+            Constructor of UpdateTrackPage
+            </summary>
+            <param name="track"> Track that we want to update, requires Track object </param>
+            <remarks>
+            Fill boxes with oldTrack data and initilaize combobox
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.UpdateTrackPage.updateTrack_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            UpdateTrackButton action
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>
+            Update track record if data changes
+            </remarks>
+        </member>
+        <member name="M:MultimediaLibrary.UpdateTrackPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
         </member>
     </members>
 </doc>

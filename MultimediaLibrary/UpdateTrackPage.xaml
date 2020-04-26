@@ -5,35 +5,48 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MultimediaLibrary"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
       Title="UpdateTrackPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
+        <!--Row 1-->
+        <TextBlock  Grid.Row="1" Grid.Column="1" Text="Artist name: " FontSize="32" Foreground="White" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Row="1" Grid.Column="2" x:Name="uArtistSelect" Height="30" Width="400" FontSize="20" 
+                  Foreground="Black" BorderBrush="#FF152B2B" ItemsSource="{Binding Artist.Name}" Cursor="Hand"/>
 
-        <TextBlock  Text="Artist name: " FontSize="28" Foreground="#FF152B2B" HorizontalAlignment="Left"/>
-        <ComboBox Grid.Column="1" x:Name="uArtistSelect" Height="30" Width="400" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" BorderBrush="#FF152B2B" ItemsSource="{Binding Artist.Name}"/>
+        <!--Row 2-->
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Track name: " FontSize="32" Foreground="White" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="uTrackNameBox" Height="30" Width="400" FontSize="20" 
+                 Background="#FF152B2B" Foreground="White" />
 
-        <TextBlock Grid.Row="1" Text="Track name: " FontSize="28" Foreground="#FF152B2B" HorizontalAlignment="Left"/>
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="uTrackNameBox" Height="30" Width="400" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" />
+        <!--Row 3-->
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Youtube path: " FontSize="32" Foreground="White" 
+                   HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="uYoutubeTrackPathBox" Height="30" Width="400" FontSize="20" Background="#FF152B2B" 
+                 Foreground="White" />
+        <Button Grid.Row="3" Grid.Column="3" x:Name="updateTrack" Content="Update" Margin="10" FontSize="20" Background="#FF152B2B" 
+                Foreground="White" Click="updateTrack_Click"/>
 
-        <TextBlock Grid.Row="2" Text="Youtube path: " FontSize="28" Foreground="#FF152B2B" HorizontalAlignment="Left"/>
-        <TextBox Grid.Row="2" Grid.Column="1" x:Name="uYoutubeTrackPathBox" Height="30" Width="400" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" />
-        <Button Grid.Row="2" Grid.Column="2" x:Name="addTrackYoutubePath" Content="Add" Margin="10" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" />
+        <!--Row 4-->
+        <Label Grid.Row="2" Grid.Column="4" Grid.RowSpan="2" x:Name="uTrackStatusLabel" FontSize="32" HorizontalAlignment="Right" 
+               Foreground="White"/>
 
-        <Label Grid.Row="3" Grid.Column="1" x:Name="uTrackStatusLabel" FontSize="28" HorizontalAlignment="Right" Foreground="#FF152B2B"/>
-        <Button Grid.Row="3" Grid.Column="2" x:Name="updateTrack" Content="Update" Margin="10" FontSize="16" Background="#FF152B2B" Foreground="#FF606793" Click="updateTrack_Click" />
     </Grid>
 </Page>

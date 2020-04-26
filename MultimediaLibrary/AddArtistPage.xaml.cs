@@ -16,6 +16,7 @@ namespace MultimediaLibrary
     using Models;
     using Interfaces;
     using Repositories;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Interaction logic for AddArtistPage.xaml
@@ -43,12 +44,30 @@ namespace MultimediaLibrary
         /// </remarks>
         private void saveArtist_Click(object sender, RoutedEventArgs e)
         {
+            var TestApi = new Api();
+            Task<Api.SearchResult> myTask;
+            string ID = "";
             if (artistNameBox.Text.Length !=0)
             {
                 if (ArtistAlreadyExist(artistNameBox.Text)) artistStatusLabel.Content = "Artist already exists";
                 else
                 {
                     Artist artist = new Artist() { Name = artistNameBox.Text };
+                    try
+                    {
+                        //myTask = TestApi.FindID(artistNameBox.Text, "channel");
+                        //ID = myTask.Result.ID;
+                        //MessageBox.Show(myTask.Result.ID);
+                        //youtubeAccountPathBox.Text = myTask.Result.ID;
+                    }
+                    catch (AggregateException ex)
+                    {
+                        foreach (var error in ex.InnerExceptions)
+                        {
+                            MessageBox.Show(error.Message);
+                        }
+                    }
+                    //MessageBox.Show(ID);
                     if (youtubeAccountPathBox.Text.Length != 0) artist.YoutubeAccountPath = youtubeAccountPathBox.Text;
                     IArtistRepository repo = new ArtistRepository();
                     repo.CreateArtist(artist);

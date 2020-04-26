@@ -5,38 +5,129 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MultimediaLibrary"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      
       Title="DisplayPage">
 
     <Grid>
-        <DataGrid x:Name="displayArtist" Background="#FF606793" Foreground="#FF152B2B" FontSize="16" AutoGenerateColumns="False" Margin="150,10">
+        <DataGrid x:Name="displayArtist" Foreground="White" RowBackground="Transparent" 
+                  Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
+                  Margin="100,100,100,100" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                  BorderBrush="#FF8B8B8B" CanUserResizeColumns="False" CanUserReorderColumns="False" 
+                  CanUserResizeRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Width="400" Binding="{Binding Path=Name}"/>
-                <DataGridTemplateColumn Width="100">
+                <DataGridTextColumn Header="Name" Width="auto" MinWidth="200" 
+                                    Binding="{Binding Path=Name}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF2F42A0" Offset="0.439"/>
+                                        <GradientStop Color="#FF667EEE" Offset="0.996"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Subscriptions" Width="auto" MinWidth="250" 
+                                    Binding="{Binding Path=Subscriptions}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF2F42A0" Offset="0.439"/>
+                                        <GradientStop Color="#FF667EEE" Offset="0.996"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF2F42A0" Offset="0.439"/>
+                                        <GradientStop Color="#FF667EEE" Offset="0.996"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Open" Click="OpenButton_Click"/>
+                            <Button Content="Open" Click="OpenButton_Click" Background="#FF252526" 
+                                    Foreground="White" Margin="2,2,2,2"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="100">
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF2F42A0" Offset="0.439"/>
+                                        <GradientStop Color="#FF667EEE" Offset="0.996"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Display" Click="DisplayButton_Click"/>
+                            <Button Content="Show Tracks" Click="DisplayButton_Click" 
+                                    Background="#FF252526" Foreground="White" Margin="2,2,2,2"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="100">
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF2F42A0" Offset="0.439"/>
+                                        <GradientStop Color="#FF667EEE" Offset="0.996"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" Click="UpdateButton_Click"/>
+                            <Button Content="Edit" Click="UpdateButton_Click" 
+                                    Background="#FF252526" Foreground="White" Margin="2,2,2,2"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="100">
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF2F42A0" Offset="0.439"/>
+                                        <GradientStop Color="#FF667EEE" Offset="0.996"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Delete" Click="DeleteButton_Click"/>
+                            <Button Content="Delete artist" Click="DeleteButton_Click" 
+                                    Background="#FF252526" Foreground="White" Margin="2,2,2,2"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -20,7 +20,7 @@ namespace MultimediaLibrary
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MultimediaLibrary2;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MultimediaLibraryTest;Trusted_Connection=True;");
 
             return new AppDbContext(optionsBuilder.Options);
         }
