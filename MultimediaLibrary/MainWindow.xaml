@@ -24,6 +24,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
@@ -54,7 +55,7 @@
             </Button.Background>
         </Button>
 
-        <Frame Grid.Row="2" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="2"
+        <Frame Grid.Row="2" Grid.Column="2" Grid.RowSpan="5" Grid.ColumnSpan="2"
                x:Name="Main" 
                NavigationUIVisibility="Hidden">
         </Frame>
@@ -70,6 +71,12 @@
         <Button Grid.Row="4" Grid.Column="1" x:Name="Button3" Content="Display artists" 
                     Foreground="White" FontSize="25" Height="60" 
                     Width="180" Margin="10,10,10,10" Background="#FF3F4646" 
-                    BorderBrush="#FF871987" Click="Button3_Click" Cursor="Hand"/>      
+                    BorderBrush="#FF871987" Click="Button3_Click" Cursor="Hand"/>
+        
+        <!--Row 5-->
+        <!--           DEBUG BOX            -->
+        <TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                 x:Name="DebugBox" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <!--           DEBUG BOX            -->
     </Grid>
 </Window>

@@ -18,17 +18,28 @@ namespace MultimediaLibrary
     using Models;
     using Interfaces;
     using Repositories;
+    using System.Threading;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        //---------------Debug--------------
+        DebugOutput outputter;
+        //----------------------------------
         /// <summary>
         /// Constructor that initialise MainWindow
         /// </summary>
         public MainWindow()
         {
             InitializeComponent();
+
+            //---------Debug----------
+            outputter = new DebugOutput(DebugBox);
+            Console.SetOut(outputter);
+            Console.WriteLine("Started");    
+            //-----------------------------------
         }
 
         /// <summary>
@@ -69,6 +80,5 @@ namespace MultimediaLibrary
         {
             Main.Content = new DisplayArtistPage();
         }
-
     }
 }

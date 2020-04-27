@@ -42,6 +42,7 @@ namespace MultimediaLibrary
         /// <remarks>
         /// Save inscribed data as a new Artist in database
         /// </remarks>
+        
         private void saveArtist_Click(object sender, RoutedEventArgs e)
         {
             var TestApi = new Api();
@@ -53,9 +54,13 @@ namespace MultimediaLibrary
                 else
                 {
                     Artist artist = new Artist() { Name = artistNameBox.Text };
+                    Console.WriteLine("Wchodzę w try");
                     try
                     {
-                        //myTask = TestApi.FindID(artistNameBox.Text, "channel");
+                        Console.WriteLine("Łączenie z API");
+                        myTask = TestApi.FindID(artistNameBox.Text, "channel");
+                        Console.WriteLine(myTask.Result.ID);
+                        //Console.WriteLine("Otrzymano wynik z API {0}", myTask.Result.ID);
                         //ID = myTask.Result.ID;
                         //MessageBox.Show(myTask.Result.ID);
                         //youtubeAccountPathBox.Text = myTask.Result.ID;
@@ -67,7 +72,7 @@ namespace MultimediaLibrary
                             MessageBox.Show(error.Message);
                         }
                     }
-                    //MessageBox.Show(ID);
+                    //Console.WriteLine("dupa");                    
                     if (youtubeAccountPathBox.Text.Length != 0) artist.YoutubeAccountPath = youtubeAccountPathBox.Text;
                     IArtistRepository repo = new ArtistRepository();
                     repo.CreateArtist(artist);
