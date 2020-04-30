@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using System.Windows.Controls;
-
-namespace MultimediaLibrary
+﻿namespace MultimediaLibrary
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.IO;
+    using System.Windows.Controls;
+
+
     public class DebugOutput : TextWriter
     {
         TextBox textBox = null;

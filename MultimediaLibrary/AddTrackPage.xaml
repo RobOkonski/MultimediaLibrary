@@ -35,7 +35,7 @@
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Track name: " FontSize="32" Foreground="White" HorizontalAlignment="Left"/>
         <TextBox Grid.Row="2" Grid.Column="2" x:Name="trackNameBox" Height="30" Width="400" FontSize="20" 
                  Background="#FF152B2B" Foreground="White" />
-        <Button Grid.Row="2" Grid.Column="3" x:Name="saveTrack" Content="Add" Margin="10" FontSize="20" Background="#FF152B2B" 
+        <Button Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" x:Name="saveTrack" Content="Add" Margin="10" FontSize="20" Background="#FF152B2B" 
                 Foreground="White" Click="saveTrack_Click"/>
         
         <!--Row 3-->
@@ -43,8 +43,8 @@
                    HorizontalAlignment="Left"/>
         <TextBox Grid.Row="3" Grid.Column="2" x:Name="youtubeTrackPathBox" Height="30" Width="400" FontSize="20" Background="#FF152B2B" 
                  Foreground="White" />
-        <Button Grid.Row="3" Grid.Column="3" x:Name="addTrackYoutubePath" Content="Add" Margin="10" FontSize="20" Background="#FF152B2B" 
-                Foreground="White" />
+        <!--<Button Grid.Row="3" Grid.Column="3" x:Name="addTrackYoutubePath" Content="Add" Margin="10" FontSize="20" Background="#FF152B2B" 
+                Foreground="White" />-->
         
         <!--Row 4-->
         <Label Grid.Row="2" Grid.Column="4" x:Name="trackStatusLabel" FontSize="32" HorizontalAlignment="Right" 

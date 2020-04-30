@@ -81,6 +81,24 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:MultimediaLibrary.Api">
+            <summary>
+            Implementations of API Interface.
+            </summary>
+        </member>
+        <member name="M:MultimediaLibrary.Api.FindID(System.String,System.String)">
+            <summary>
+            Find item by keyword 
+            </summary>
+            <param name="name"> Name of channel/video to search </param>
+            <param name="typeToSearch"> Type of object to search (channel/video) </param>
+            <returns> Returns SearchApiResult, which contains: Name, ID, Count </returns>
+        </member>
+        <member name="T:MultimediaLibrary.Api.SearchApiResult">
+            <summary>
+            Store base parametres of object
+            </summary>
+        </member>
         <member name="T:MultimediaLibrary.App">
             <summary>
             Interaction logic for App.xaml
@@ -432,6 +450,11 @@
             Store path to artists youtube account, nullable
             </summary>
         </member>
+        <member name="P:MultimediaLibrary.Models.Artist.Subscribers">
+            <summary>
+            Store count of subscribers, nullable
+            </summary>
+        </member>
         <member name="P:MultimediaLibrary.Models.Artist.Tracks">
             <summary>
             Provde lazy loading of artists tracks
@@ -460,6 +483,11 @@
         <member name="P:MultimediaLibrary.Models.Track.Artist">
             <summary>
             Store artist referance
+            </summary>
+        </member>
+        <member name="P:MultimediaLibrary.Models.Track.Views">
+            <summary>
+            Store count of views, nullable
             </summary>
         </member>
         <member name="P:MultimediaLibrary.Models.Track.YoutubePath">

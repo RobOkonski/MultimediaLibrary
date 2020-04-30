@@ -22,7 +22,12 @@ namespace MultimediaLibrary.Models
         /// <summary>
         /// Store path to artists youtube account, nullable
         /// </summary>
-        public string YoutubeAccountPath { set; get; } = null;
+        public string YoutubeAccountPath { set; get; } = null;       
+
+        /// <summary>
+        /// Store count of subscribers, nullable
+        /// </summary>
+        public ulong? Subscribers { get; set; }
 
         /// <summary>
         /// Provde lazy loading of artists tracks

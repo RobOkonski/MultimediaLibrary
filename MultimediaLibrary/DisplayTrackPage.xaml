@@ -14,7 +14,7 @@
                   Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
                   Margin="100,100,100,100" HorizontalAlignment="Center" VerticalAlignment="Center" 
                   BorderBrush="#FF8B8B8B" CanUserResizeColumns="False" CanUserReorderColumns="False" 
-                  CanUserResizeRows="False">
+                  CanUserResizeRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Tracks" Width="auto" MinWidth="250" 
                                     Binding="{Binding Path=Name}" >

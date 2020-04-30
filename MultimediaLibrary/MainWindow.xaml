@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
         xmlns:local="clr-namespace:MultimediaLibrary"
         mc:Ignorable="d"
-        Title="Multimedia Libarary Beta 2.5" Width="1920" Height="1080"  
+        Title="Multimedia Libarary v1.0" Width="1920" Height="1080"  
         WindowState="Maximized">
     <Grid>
         <Grid.Background>
@@ -31,12 +31,12 @@
         
         <!--Row 1-->
         <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"
-                   Text="MultimediaLibrary Beta 2.5" FontSize="50" 
+                   Text="MultimediaLibrary v1.0" FontSize="50" 
                    FontWeight="Bold" Foreground="White" 
                    HorizontalAlignment="Center" />
         
         <!--Row 2-->
-        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="2">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="8" Grid.ColumnSpan="2">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF191919" Offset="0.254"/>
@@ -44,7 +44,7 @@
                 </LinearGradientBrush>
             </Grid.Background>
         </Grid>
-        <Button Grid.Row="2" Grid.Column="1" x:Name="Button1" Content="Add artist" 
+        <Button Grid.Row="2" Grid.Column="1" x:Name="Button1" Content="Add Artist" 
                 Foreground="White" FontSize="25" Height="60" Width="180" 
                 Margin="10,10,10,10" 
                 BorderBrush="#FF871987" Click="Button1_Click" 
@@ -75,8 +75,8 @@
         
         <!--Row 5-->
         <!--           DEBUG BOX            -->
-        <TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" 
-                 x:Name="DebugBox" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <!--<TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                 x:Name="DebugBox" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>-->
         <!--           DEBUG BOX            -->
     </Grid>
 </Window>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+//using Syste
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -45,34 +46,25 @@ namespace MultimediaLibrary
         
         private void saveArtist_Click(object sender, RoutedEventArgs e)
         {
-            var TestApi = new Api();
-            Task<Api.SearchResult> myTask;
-            string ID = "";
+            var resultSearch = new Api();
+            Api.SearchApiResult result;
+
             if (artistNameBox.Text.Length !=0)
             {
                 if (ArtistAlreadyExist(artistNameBox.Text)) artistStatusLabel.Content = "Artist already exists";
                 else
                 {
-                    Artist artist = new Artist() { Name = artistNameBox.Text };
-                    Console.WriteLine("Wchodzę w try");
+                    Artist artist = new Artist() { Name = artistNameBox.Text };                   
                     try
                     {
-                        Console.WriteLine("Łączenie z API");
-                        myTask = TestApi.FindID(artistNameBox.Text, "channel");
-                        Console.WriteLine(myTask.Result.ID);
-                        //Console.WriteLine("Otrzymano wynik z API {0}", myTask.Result.ID);
-                        //ID = myTask.Result.ID;
-                        //MessageBox.Show(myTask.Result.ID);
-                        //youtubeAccountPathBox.Text = myTask.Result.ID;
+                        result = resultSearch.FindID(artistNameBox.Text, "channel");
+                        youtubeAccountPathBox.Text = "https://www.youtube.com/channel/" + result.ID;
+                        artist.Subscribers = result.Count;
                     }
-                    catch (AggregateException ex)
-                    {
-                        foreach (var error in ex.InnerExceptions)
-                        {
-                            MessageBox.Show(error.Message);
-                        }
+                    catch (Exception ex)
+                    {                        
+                        MessageBox.Show(ex.Message);
                     }
-                    //Console.WriteLine("dupa");                    
                     if (youtubeAccountPathBox.Text.Length != 0) artist.YoutubeAccountPath = youtubeAccountPathBox.Text;
                     IArtistRepository repo = new ArtistRepository();
                     repo.CreateArtist(artist);

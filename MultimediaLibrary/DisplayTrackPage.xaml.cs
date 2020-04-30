@@ -16,6 +16,7 @@ namespace MultimediaLibrary
     using Interfaces;
     using Repositories;
     using Models;
+    using System.Diagnostics;
 
     /// <summary>
     /// Interaction logic for DisplayTrackPage.xaml
@@ -47,8 +48,22 @@ namespace MultimediaLibrary
         private void OpenTrackButton_Click(object sender, RoutedEventArgs e)
         {
             Track track = displayTracks.SelectedItem as Track;
-            if (track.YoutubePath == null) MessageBox.Show("Not found");
-            else MessageBox.Show(track.YoutubePath);
+            Process myProcess = new Process();
+            if (track.YoutubePath.Length == 0) MessageBox.Show("No ID");
+            else
+            {
+                try
+                {
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = track.YoutubePath;
+                    myProcess.Start();
+
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show(er.Message);
+                }
+            }
         }
 
         /// <summary>

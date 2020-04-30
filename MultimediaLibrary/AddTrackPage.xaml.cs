@@ -48,6 +48,8 @@ namespace MultimediaLibrary
         /// </remarks>
         private void saveTrack_Click(object sender, RoutedEventArgs e)
         {
+            var resultSearch = new Api();
+            Api.SearchApiResult result;
             if (trackNameBox.Text.Length != 0 && artistSelect.SelectedItem != null)
             {
                 if (TrackAlreadyExist(trackNameBox.Text, artistSelect.Text)) trackStatusLabel.Content = "Track already exist";
@@ -55,6 +57,16 @@ namespace MultimediaLibrary
                 {
                     IArtistRepository artistRepo = new ArtistRepository();
                     Track track = new Track() { Name = trackNameBox.Text, ArtistId = artistRepo.GetArtist(artistSelect.Text).ArtistId };
+                    try
+                    {
+                        result = resultSearch.FindID(trackNameBox.Text, "video");
+                        youtubeTrackPathBox.Text = "https://www.youtube.com/watch?v=" + result.ID;
+                        track.Views = result.Count;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     if (youtubeTrackPathBox.Text.Length != 0) track.YoutubePath = youtubeTrackPathBox.Text;
                     ITrackRepository repo = new TrackRepository();
                     repo.CreateTrack(track);

@@ -16,6 +16,7 @@ namespace MultimediaLibrary
     using Interfaces;
     using Repositories;
     using Models;
+    using System.Diagnostics;
 
     /// <summary>
     /// Interaction logic for DisplayPage.xaml
@@ -46,8 +47,21 @@ namespace MultimediaLibrary
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             Artist artist = displayArtist.SelectedItem as Artist;
-            if (artist.YoutubeAccountPath == null) MessageBox.Show("Click");
-            else MessageBox.Show(artist.YoutubeAccountPath);
+            Process myProcess = new Process();
+            if (artist.YoutubeAccountPath.Length == 0) MessageBox.Show("No ID");
+            else
+            {
+                try
+                {
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = artist.YoutubeAccountPath;
+                    myProcess.Start();
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show(er.Message);
+                }
+            }
         }
 
         /// <summary>

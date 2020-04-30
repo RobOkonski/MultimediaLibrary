@@ -33,7 +33,7 @@
                  Foreground="White" />
         <Label Grid.Row="1" Grid.Column="4" x:Name="artistStatusLabel" 
                FontSize="28" HorizontalAlignment="Right" Foreground="White"/>
-        <Button Grid.Row="1" Grid.Column="3" x:Name="saveArtist" Content="Add" 
+        <Button Grid.Row="1" Grid.Column="3" Grid.RowSpan="2"  x:Name="saveArtist" Content="Add" 
                 Margin="10" FontSize="20" Background="#FF252526" 
                 Foreground="White" Click="saveArtist_Click" />
         <!--Row 2-->
@@ -42,8 +42,8 @@
         <TextBox Grid.Row="2" Grid.Column="2" x:Name="youtubeAccountPathBox" 
                  Height="30" Width="400" FontSize="20" Background="#FF252526" 
                  Foreground="White" />
-        <Button Grid.Row="2" Grid.Column="3" x:Name="addArtistAccountPath" 
+        <!--<Button Grid.Row="2" Grid.Column="3" x:Name="addArtistAccountPath" 
                 Content="Add" Margin="10" FontSize="20" Background="#FF252526" 
-                Foreground="White" />
+                Foreground="White" />-->
     </Grid>
 </Page>

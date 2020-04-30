@@ -29,6 +29,10 @@ namespace MultimediaLibrary.Models
         /// Store artist referance
         /// </summary>
         public virtual Artist Artist { set; get; }
+        /// <summary>
+        /// Store count of views, nullable
+        /// </summary>
+        public ulong? Views { get; set; }
 
         /// <summary>
         /// Store YouTube path to this track, nullable
