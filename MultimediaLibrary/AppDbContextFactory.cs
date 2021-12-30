@@ -20,7 +20,7 @@ namespace MultimediaLibrary
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MultimediaLibraryTest;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=tcp:psk-projekt.database.windows.net,1433;Initial Catalog=psk-projekt;Persist Security Info=False;User ID=robert;Password=#EDC4rfv;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
             return new AppDbContext(optionsBuilder.Options);
         }

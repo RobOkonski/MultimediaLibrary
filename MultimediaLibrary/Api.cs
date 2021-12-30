@@ -29,7 +29,7 @@
         {
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = "AIzaSyBd-1CLlC-cxBSmFhthjPPzssOtELWNV0Q",
+                ApiKey = "AIzaSyDFpCcN1LtmocyfJpO67VSKZqCECaCmYyo",
                 ApplicationName = this.GetType().ToString()
             });
 

@@ -571,6 +571,51 @@ references:
   isSpec: "True"
   fullName: MultimediaLibrary.Migrations.AddSubsAndViews.Up
   nameWithType: AddSubsAndViews.Up
+- uid: MultimediaLibrary.Migrations.ChangeToAzure
+  name: ChangeToAzure
+  href: api/MultimediaLibrary.Migrations.ChangeToAzure.html
+  commentId: T:MultimediaLibrary.Migrations.ChangeToAzure
+  fullName: MultimediaLibrary.Migrations.ChangeToAzure
+  nameWithType: ChangeToAzure
+- uid: MultimediaLibrary.Migrations.ChangeToAzure.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: BuildTargetModel(ModelBuilder)
+  href: api/MultimediaLibrary.Migrations.ChangeToAzure.html#MultimediaLibrary_Migrations_ChangeToAzure_BuildTargetModel_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:MultimediaLibrary.Migrations.ChangeToAzure.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: MultimediaLibrary.Migrations.ChangeToAzure.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: ChangeToAzure.BuildTargetModel(ModelBuilder)
+- uid: MultimediaLibrary.Migrations.ChangeToAzure.BuildTargetModel*
+  name: BuildTargetModel
+  href: api/MultimediaLibrary.Migrations.ChangeToAzure.html#MultimediaLibrary_Migrations_ChangeToAzure_BuildTargetModel_
+  commentId: Overload:MultimediaLibrary.Migrations.ChangeToAzure.BuildTargetModel
+  isSpec: "True"
+  fullName: MultimediaLibrary.Migrations.ChangeToAzure.BuildTargetModel
+  nameWithType: ChangeToAzure.BuildTargetModel
+- uid: MultimediaLibrary.Migrations.ChangeToAzure.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Down(MigrationBuilder)
+  href: api/MultimediaLibrary.Migrations.ChangeToAzure.html#MultimediaLibrary_Migrations_ChangeToAzure_Down_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:MultimediaLibrary.Migrations.ChangeToAzure.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: MultimediaLibrary.Migrations.ChangeToAzure.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ChangeToAzure.Down(MigrationBuilder)
+- uid: MultimediaLibrary.Migrations.ChangeToAzure.Down*
+  name: Down
+  href: api/MultimediaLibrary.Migrations.ChangeToAzure.html#MultimediaLibrary_Migrations_ChangeToAzure_Down_
+  commentId: Overload:MultimediaLibrary.Migrations.ChangeToAzure.Down
+  isSpec: "True"
+  fullName: MultimediaLibrary.Migrations.ChangeToAzure.Down
+  nameWithType: ChangeToAzure.Down
+- uid: MultimediaLibrary.Migrations.ChangeToAzure.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  name: Up(MigrationBuilder)
+  href: api/MultimediaLibrary.Migrations.ChangeToAzure.html#MultimediaLibrary_Migrations_ChangeToAzure_Up_Microsoft_EntityFrameworkCore_Migrations_MigrationBuilder_
+  commentId: M:MultimediaLibrary.Migrations.ChangeToAzure.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  fullName: MultimediaLibrary.Migrations.ChangeToAzure.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+  nameWithType: ChangeToAzure.Up(MigrationBuilder)
+- uid: MultimediaLibrary.Migrations.ChangeToAzure.Up*
+  name: Up
+  href: api/MultimediaLibrary.Migrations.ChangeToAzure.html#MultimediaLibrary_Migrations_ChangeToAzure_Up_
+  commentId: Overload:MultimediaLibrary.Migrations.ChangeToAzure.Up
+  isSpec: "True"
+  fullName: MultimediaLibrary.Migrations.ChangeToAzure.Up
+  nameWithType: ChangeToAzure.Up
 - uid: MultimediaLibrary.Migrations.InitialCreate
   name: InitialCreate
   href: api/MultimediaLibrary.Migrations.InitialCreate.html

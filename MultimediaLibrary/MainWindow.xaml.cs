@@ -36,9 +36,9 @@ namespace MultimediaLibrary
             InitializeComponent();
 
             //---------Debug----------
-            //outputter = new DebugOutput(DebugBox);
-            //Console.SetOut(outputter);
-            //Console.WriteLine("Started");    
+            outputter = new DebugOutput(DebugBox);
+            Console.SetOut(outputter);
+            Console.WriteLine("Started");
             //-----------------------------------
         }
 

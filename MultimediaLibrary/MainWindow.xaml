@@ -74,9 +74,9 @@
                     BorderBrush="#FF871987" Click="Button3_Click" Cursor="Hand"/>
         
         <!--Row 5-->
-        <!--           DEBUG BOX            -->
-        <!--<TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" 
-                 x:Name="DebugBox" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>-->
-        <!--           DEBUG BOX            -->
+                   <!--DEBUG BOX-->            
+        <TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                 x:Name="DebugBox" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                   <!--DEBUG BOX-->            
     </Grid>
 </Window>
